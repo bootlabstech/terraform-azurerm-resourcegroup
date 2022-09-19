@@ -8,8 +8,8 @@ variable "location" {
   description = "The Azure Region where the Resource Group should exist."
 }
 
-variable "lock_level" {
-  type        = string
-  description = "Specifies the Level to be used for this Lock. Possible values are CanNotDelete and ReadOnly."
-  default     = "ReadOnly"
-}
+# variable "lock_level" {
+#   type        = string
+#   description = "Specifies the Level to be used for this Lock. Possible values are CanNotDelete and ReadOnly."
+#   default     = "ReadOnly"
+# }
