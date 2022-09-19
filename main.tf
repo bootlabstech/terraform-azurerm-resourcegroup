@@ -1,6 +1,11 @@
 resource "azurerm_resource_group" "resource_group" {
   name     = var.name
   location = var.location
+  lifecycle {
+    ignore_changes = [
+      tags,
+    ]
+  }
 }
 
 # resource "azurerm_management_lock" "resource-group-lock" {
