@@ -14,7 +14,7 @@ variable "location" {
 #   default     = "ReadOnly"
 # }
 # Keyvault
-variable "name" {
+variable "keyvault_name" {
   type        = string
   description = "Specifies the name of the Key Vault. Changing this forces a new resource to be created. The name must be globally unique. If the vault is in a recoverable state then the vault will need to be purged before reusing the name."
 }
