@@ -52,7 +52,7 @@ variable "purge_protection_enabled" {
 variable "public_network_access_enabled" {
   type        = bool
   description = "Whether public network access is allowed for this Key Vault. Defaults to true."
-  default = false
+  default = true
 }
 variable "soft_delete_retention_days" {
   type        = number
