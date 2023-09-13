@@ -53,6 +53,7 @@ resource "azurerm_key_vault" "key_vault" {
       tags,
     ]
   }
+  depends_on = [ azurerm_resource_group.resource_group ]
 }
 
 
