@@ -21,27 +21,27 @@ variable "keyvault_name" {
 variable "sku_name" {
   type        = string
   description = "The Name of the SKU used for this Key Vault. Possible values are standard and premium."
-  default = "standard"
+  default     = "standard"
 }
 variable "enabled_for_deployment" {
   type        = bool
   description = "Boolean flag to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from the key vault."
-  default = true
+  default     = true
 }
 variable "enabled_for_disk_encryption" {
   type        = bool
   description = " Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys."
-  default = true
+  default     = true
 }
 variable "enabled_for_template_deployment" {
   type        = bool
   description = "Boolean flag to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault."
-  default = true
+  default     = true
 }
 variable "enable_rbac_authorization" {
   type        = bool
   description = "Boolean flag to specify whether Azure Key Vault uses Role Based Access Control (RBAC) for authorization of data actions."
-  default = true
+  default     = false
 }
 variable "purge_protection_enabled" {
   type        = bool
@@ -52,7 +52,7 @@ variable "purge_protection_enabled" {
 variable "public_network_access_enabled" {
   type        = bool
   description = "Whether public network access is allowed for this Key Vault. Defaults to true."
-  default = true
+  default     = true
 }
 variable "soft_delete_retention_days" {
   type        = number

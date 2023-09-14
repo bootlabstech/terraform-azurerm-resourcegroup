@@ -7,12 +7,6 @@ resource "azurerm_resource_group" "resource_group" {
     ]
   }
 }
-resource "azurerm_log_analytics_workspace" "central_workspace" {
-  name                = "${var.resource_group_name}-workspace"
-  location            = "${azurerm_resource_group.resource_group.location}"
-  resource_group_name = "${azurerm_resource_group.resource_group.name}"
-  sku                 = "PerGB2018"
-}
 data "azurerm_client_config" "current" {}
 
 # Creates a Key vault
@@ -23,9 +17,9 @@ resource "azurerm_key_vault" "key_vault" {
   sku_name                        = var.sku_name
   tenant_id                       = data.azurerm_client_config.current.tenant_id
   enabled_for_deployment          = var.enabled_for_deployment
-  enabled_for_disk_encryption     = var.enabled_for_disk_encryption 
+  enabled_for_disk_encryption     = var.enabled_for_disk_encryption
   enabled_for_template_deployment = var.enabled_for_template_deployment
-  enable_rbac_authorization       = var.enable_rbac_authorization 
+  enable_rbac_authorization       = var.enable_rbac_authorization
   purge_protection_enabled        = var.purge_protection_enabled
   public_network_access_enabled   = var.public_network_access_enabled
   soft_delete_retention_days      = var.soft_delete_retention_days
@@ -53,7 +47,7 @@ resource "azurerm_key_vault" "key_vault" {
       tags,
     ]
   }
-  depends_on = [ azurerm_resource_group.resource_group ]
+  depends_on = [azurerm_resource_group.resource_group]
 }
 
 
