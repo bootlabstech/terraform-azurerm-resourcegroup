@@ -49,7 +49,3 @@ resource "azurerm_key_vault" "key_vault" {
   }
   depends_on = [azurerm_resource_group.resource_group]
 }
-
-
-
-
