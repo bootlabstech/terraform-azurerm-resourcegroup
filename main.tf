@@ -44,7 +44,7 @@ resource "azurerm_key_vault" "key_vault" {
   }
   lifecycle {
     ignore_changes = [
-      tags,
+      tags, access_policy
     ]
   }
   depends_on = [azurerm_resource_group.resource_group]
