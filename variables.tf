@@ -59,3 +59,8 @@ variable "soft_delete_retention_days" {
   description = "The number of days that items should be retained for once soft-deleted. This value can be between 7 and 90 (the default) days."
   default     = 7
 }
+variable "create_vm" {
+  type        = bool
+  description = "Controls whether VM resources (like disk access) should be created."
+  default     = false
+}

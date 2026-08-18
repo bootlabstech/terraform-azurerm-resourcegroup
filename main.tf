@@ -7,6 +7,19 @@ resource "azurerm_resource_group" "resource_group" {
     ]
   }
 }
+
+
+resource "azurerm_disk_access" "azurerm_disk_access" {
+  count               = var.create_vm ? 1 : 0
+  name                = "${var.resource_group_name}-diskacc"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+
+  depends_on = [azurerm_resource_group.resource_group]
+}
+
+
+
 data "azurerm_client_config" "current" {}
 
 # Creates a Key vault
